@@ -1,0 +1,17 @@
+package Week1.Day1;
+public class Chrome {
+public void getName() {
+
+}
+public void printName() {
+System.out.println("This is google chrome")
+}
+}
+
+public clas Browser{
+public static void main(String args[]) {
+Chrome obj = new Chrome();
+obj.getName();
+obj.printName();
+}
+}
