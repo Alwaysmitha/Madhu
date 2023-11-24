@@ -1,0 +1,19 @@
+package Week1.Day1;
+public class Student {
+string studentName="Madhumitha";
+int rollNo ='28'; 
+string collegeName ="BCET";
+int markScored = 85;
+float cgpa = 8.5;
+}
+
+public static void main(strings args[]){
+Student obj = new Student();
+System.out.println("The Student name is:" + studentName);
+System.out.println("The RollNo is:" + rollNo);
+System.out.println("The CollegeName is:" + collegeName);
+System.out.println("The MarkScored is:" + markScored);
+System.out.ptintln("The CGPA is:" + cgpa);
+}
+}
+
