@@ -1,0 +1,19 @@
+package Week1.day2;
+public class Numbers {
+	public static void main(String[] args) {
+		int numb =35;
+		if(numb>0)  
+		{
+			System.out.println("The number is positive");
+		}
+		else if (numb < 0);
+		{
+			System.out.println("The number is Negative");
+		}
+		else
+		{  
+			System.out.println("The number is zero.");  
+	}
+	}
+}
+
