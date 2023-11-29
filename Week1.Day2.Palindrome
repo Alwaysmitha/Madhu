@@ -1,0 +1,25 @@
+package Week1.day2;
+
+public class Palindrome {
+
+		public static void main(String[] args) 
+		{
+			int a = 12321,output=0,input;
+			input = a;
+			for (;a>0;a/=10) 
+			{
+	      	  int temp = a%10;
+	      	  output = output * 10 + temp;
+	      	 
+	         }
+	      
+	        if (input == output ) {
+	      	  System.out.println("The given number is a Palindrome");
+	        }
+	        else {
+	      	  System.out.println("The given number is not a Palindrome");  
+	        }
+	}
+	
+
+}
