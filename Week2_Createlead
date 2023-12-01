@@ -1,0 +1,64 @@
+package Week2.day2;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Learndropdown {
+
+	public static void main(String[] args) throws InterruptedException {
+	ChromeDriver driver = new ChromeDriver();
+		// load the url
+		driver.get("http://leaftaps.com/opentaps/control/main");
+		driver.manage().window().maximize();
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));//selenium wait
+				
+		driver.findElement(By.id("username")).sendKeys("DemoCSR");
+		driver.findElement(By.id("password")).sendKeys("crmsfa");
+
+		driver.findElement(By.className("decorativeSubmit")).click();
+
+		WebElement crmsfa = driver.findElement(By.linkText("CRM/SFA"));
+		System.out.println(crmsfa.getText());
+		crmsfa.click();
+
+		driver.findElement(By.linkText("Leads")).click();
+		driver.findElement(By.linkText("Create Lead")).click();
+		driver.findElement(By.id("createLeadForm_companyName")).sendKeys("TL");
+		driver.findElement(By.id("createLeadForm_firstName")).sendKeys("Madhumitha");
+		driver.findElement(By.id("createLeadForm_lastName")).sendKeys("Murugesan");
+		
+		Thread.sleep(2000);// java wait
+		
+		WebElement source = driver.findElement(By.id("createLeadForm_dataSourceId"));
+		Select dd = new Select(source);
+		dd.selectByVisibleText("Employee");
+
+		WebElement marketing = driver.findElement(By.id("createLeadForm_marketingCampaignId"));
+		Select mark = new Select(marketing);
+		mark.selectByValue("Car and Driver");
+		
+		WebElement industry =driver.findElement(By.id("createLeadForm_industryEnumId"));
+		Select indus = new Select(industry);
+        indus.selectByValue("IND_SOFTWARE");
+        
+    WebElement ownership =driver.findElement(By.id("createLeadForm_ownershipEnumId"));
+		Select owner = new Select(ownership);
+        owner.selectByIndex(5);
+        
+        WebElement country =driver.findElement(By.id("createLeadForm_generalCountryGeoId"));
+        Select ctry = new Select(country);
+        ctry.selectByVisibleText("India");
+        
+        driver.findElement(By.className("smallSubmit")).click();
+
+        String title = driver.getTitle()  ;    
+        System.out.println("title");
+        
+	}
+
+}
